@@ -4,6 +4,8 @@
 	<title>Weather App</title>
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+	
+	<link href="../../css/standard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -11,26 +13,13 @@
 	<div class="row">
 		<div class="col col-md-6 offset-md-3">
 			<br/>
-			<!-- TABLE??? -->
-			<!-- <div class="form-group">
-			<table class="table table-striped">
-    			<tr th:each="request: ${requests}">
-        			<td th:text="${request.zipCode}"></td>
-        			<td ><span th:text="${request.zipCode}"></span></td>
-    			</tr>
-			</table> 
-			</div> -->
-			
-			
-			
-			
 			<h1 class="text-center">Get Your Local Forecast</h1>
 			<form th:action="@{/}" th:object="${request}" method="post" autocomplete="off">
 				<div class="form-group">
 					<input type="text" th:field="*{zipCode}" placeholder="Zip Code" class="form-control"/>
 				</div>
 				<div class="form-group">
-					<button class="btn btn-md btn-primary btn-block" name="Submit" value="Submit" type="Submit">Check Weather</button>
+					<button class="btn btn-md btn-danger btn-block" name="Submit" value="Submit" type="Submit">Check Weather</button>
 				</div>
 			</form>
 			<span th:if="${data != null && data.name =='error'}">Invalid Zip Code.Weather data not found</span>
@@ -42,20 +31,12 @@
 			<p><b>Conditions: </b><span th:text="${data.weather[0].get('description')}"></span></p>
 			<img th:src="@{${'http://openweathermap.org/img/w/'+ data.weather[0].get('icon') + '.png'}}"> 
 			
-			<h4>Recent Searches</h4> 
-			<div th:text="${postzips}">
-			<!-- <div th:text="${postzips.getName}"> -->
-			<!-- <table class="table table-striped">
-    			<tr th:each="request: ${requests}">
-        			<td th:text="${request.zipCode}"></td>
-        			<td ><span th:text="${request.zipCode}"></span></td>
-    			</tr>
-			</table> --> 
-			<!-- <h3>Forecast for <span th:text="${request.zipCode}"></span></h3> -->
+			<h4>Recent Searches: </h4> 
+			<p><b>ZipCodes </b><span th:text="${postzips}"></span></p>
+			<!-- <div th:text="${postzips}"></div> -->
 			</div>
-		</div>	
+		</div>
 	</div>
-</div>
 </div>
 </body>
 </html>

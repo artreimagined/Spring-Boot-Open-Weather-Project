@@ -8,14 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="zipcode")
+//@Table(name="zipcode")
 public class Request {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	//new
-	@Column(name="zipcode_id")
 	private Long id; 
+	@Column(name="zipcode_id")
 	private String zipCode;
 	
 	public Request() {
@@ -34,6 +33,7 @@ public class Request {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
+	
 	@Override
 	public String toString() {
 		return "Request [id=" + id + ", zipCode=" + zipCode + "]";

@@ -46,20 +46,10 @@ public class WeatherService {
 		
 	}
 	
-	// String zipCode
-//	public List<Request> getRequests() {
-//		List<Request> searchlist = new ArrayList<>(zipCodeRepository.findAll());
-//		Collections.reverse(searchlist);
-//		searchlist = searchlist.subList(0, 10);
-//		System.out.println(searchlist);
-//		return searchlist;
-//	}
-	
 	//new
 	public Request findByZipCode(String zipCode) {
         return zipCodeRepository.findById(zipCode);
     }
-    
 
     public List<Request> findAll() {
         return (List<Request>) zipCodeRepository.findAll();
