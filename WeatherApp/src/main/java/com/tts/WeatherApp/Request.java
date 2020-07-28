@@ -18,19 +18,9 @@ public class Request {
 	private Long id; 
 	private String zipCode;
 	
-//	public static List<Request> allZipCodes() {
-//		return allZipCodes(); 
-//	}
-	
 	public Request() {
 		
 	}
-	
-	//change later?
-//	public Request(String zipCode) {
-//		this.zipCode = zipCode;
-//		
-//	}
 	
 	public Long getId() {
 		return id;

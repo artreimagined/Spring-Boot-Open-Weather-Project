@@ -15,18 +15,6 @@ public class WeatherController {
 	@Autowired
 	private WeatherService weatherService;
 	
-//	@GetMapping
-//	public String getIndex(Model model) {
-//		
-//		//new
-//		List<Request> allZipCodes = weatherService.findAll();
-////		weatherService.getRequests();
-//		model.addAttribute("request", new Request());
-////		model.addAttribute("zipCode", new Request()); //added request
-//		model.addAttribute("searchedzips", allZipCodes);
-//		return "index";
-//	}
-	
 	@GetMapping(value="/")
 	public String getIndex(Model model) {
 		
@@ -54,21 +42,6 @@ public class WeatherController {
 		return "index";
 	}
 	
-	
-	//new
-//	zipCodeRepository.save(new Request(request.getZipCode())); 
-	
-//	@PostMapping(value = "/index")
-//    public <ZipCode> String addSearch(ZipCode zipCode, Model model) {
-//	//saves the new blogpost item to the database
-//    zipCodeRepository.save(new Request(request.getZipCode);
-//	
-//	//populating result.html with the blogpost info
-//	model.addAttribute("searches", request.getZipCode());
-//	
-//	
-//	return "/index";
-//    }
 	
 }
 

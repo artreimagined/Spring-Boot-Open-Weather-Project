@@ -11,19 +11,6 @@
 	<div class="row">
 		<div class="col col-md-6 offset-md-3">
 			<br/>
-			<!-- TABLE??? -->
-			<!-- <div class="form-group">
-			<table class="table table-striped">
-    			<tr th:each="request: ${requests}">
-        			<td th:text="${request.zipCode}"></td>
-        			<td ><span th:text="${request.zipCode}"></span></td>
-    			</tr>
-			</table> 
-			</div> -->
-			
-			
-			
-			
 			<h1 class="text-center">Get Your Local Forecast</h1>
 			<form th:action="@{/}" th:object="${request}" method="post" autocomplete="off">
 				<div class="form-group">
@@ -42,20 +29,12 @@
 			<p><b>Conditions: </b><span th:text="${data.weather[0].get('description')}"></span></p>
 			<img th:src="@{${'http://openweathermap.org/img/w/'+ data.weather[0].get('icon') + '.png'}}"> 
 			
-			<h4>Recent Searches</h4> 
-			<div th:text="${postzips}">
-			<!-- <div th:text="${postzips.getName}"> -->
-			<!-- <table class="table table-striped">
-    			<tr th:each="request: ${requests}">
-        			<td th:text="${request.zipCode}"></td>
-        			<td ><span th:text="${request.zipCode}"></span></td>
-    			</tr>
-			</table> --> 
-			<!-- <h3>Forecast for <span th:text="${request.zipCode}"></span></h3> -->
+			<h4>Recent Searches: </h4> 
+			<p><b>ZipCodes </b><span th:text="${postzips}"></span></p>
+			<!-- <div th:text="${postzips}"></div> -->
 			</div>
-		</div>	
+		</div>
 	</div>
-</div>
 </div>
 </body>
 </html>

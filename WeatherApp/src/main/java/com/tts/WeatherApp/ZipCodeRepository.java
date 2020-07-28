@@ -12,5 +12,6 @@ public interface ZipCodeRepository extends CrudRepository<Request, Long>{
 	
 	Request findById(String zipCode);
 	
-
+//find 10 searches
+//	List<Request> findFirst10ById(String zipCode);
 }
